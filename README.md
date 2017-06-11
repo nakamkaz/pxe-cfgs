@@ -18,11 +18,12 @@ I prepared these files for Cent OS 7.
 # Files
 
 - dlfiles.sh
-A download script for stable  coreos_production_pxe files and coreos_production_image files.
-You need to run it once.
 
-coreos_production_pxe.vmlinuz,coreos_production_pxe.cpio.gz need be replaced to TFTP / directory.
-coreos_production_image.bin.bz2 need be replaced to DocumentRoot/BuildNumber/ of your WebServer directory.
+ A download script for stable  coreos_production_pxe files and coreos_production_image files.
+ You need to run it once.
+
+ coreos_production_pxe.vmlinuz,coreos_production_pxe.cpio.gz need be replaced to TFTP / directory.
+ coreos_production_image.bin.bz2 need be replaced to DocumentRoot/BuildNumber/ of your WebServer directory.
 
   ex. /var/lib/tftpboot/coreos_production_pxe.vmlinuz
   ex. /var/lib/tftpboot/coreos_production_pxe_image.cpio.gz
@@ -30,18 +31,20 @@ coreos_production_image.bin.bz2 need be replaced to DocumentRoot/BuildNumber/ of
   ex. /var/www/html/1353.8.0/coreos_production_image.bin.bz2
 
 -  ace.local.zone
-A zone file for ISC BIND server(named). 
+
+ A zone file for ISC BIND server(named). 
    ex. /var/named/ace.local.zone
 
 -  named.conf
-A named server config
+
+ A named server config
 
   ex. /etc/named.conf
 
 -  default
 
-You will/would make DIRectory "pxelinux.cfg" in TFTP root.
-copy "default" into the directory.
+ You will/would make DIRectory "pxelinux.cfg" in TFTP root.
+ Copy "default" into the directory.
 
   ex. /var/lib/tftpboot/pxelinux.cfg/default
   
@@ -51,7 +54,7 @@ copy "default" into the directory.
   
 -  inst.sh
 
-a file to kick coreos-install with options
+ A file to kick coreos-install with options
   ex. /var/www/html/inst.sh
 
 -  pxe.ign
@@ -78,6 +81,6 @@ a file to kick coreos-install with options
 
 6. get inst.sh and kick it on the VM.
 
-localhost: core $ wget http://center/inst.sh
-localhost: core $ ./inst.sh
+ localhost: core $ wget http://center/inst.sh
+ localhost: core $ ./inst.sh
 
