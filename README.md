@@ -61,11 +61,11 @@ a file to kick coreos-install with options
 
 # Usage
 
-1. install dhcpd, tftpd, httpd (+ named).
+1. install dhcpd, tftpd, httpd (+ named) on DeployServer(center).
 
-2. setup dhcpd, tftpd, httpd (+ named).
+2. setup dhcpd, tftpd, httpd (+ named) on DeployServer(center).
 
-__ IMPORTANT: read comments in /etc/sysconfig/dhcpd __
+ __IMPORTANT__: read comments in /etc/sysconfig/dhcpd
 
 
 3. Run dlfiles.sh and move files into tftpboot/ and /var/www/html/buildnumber/
@@ -74,6 +74,10 @@ __ IMPORTANT: read comments in /etc/sysconfig/dhcpd __
 
 5. Machine boots with NIC (If you use Hyper-V VM, Legacy NIC is required.)
 
-6. get inst.sh
+ Container Linux boots up as live mode.
+
+6. get inst.sh and kick it on the VM.
 
 localhost: core $ wget http://center/inst.sh
+localhost: core $ ./inst.sh
+
