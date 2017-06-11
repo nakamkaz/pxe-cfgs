@@ -6,18 +6,18 @@
 
 Here, I need 3+1 services; DHCP, TFTP, HTTP, DNS
 
-Public IP Network : 192.168.11.0/24
-Private IP Network : 172.30.0.0/16
-Domain Name : ace.local
-DeployServer Host Name: center
-DeployServer Public NIC (eth0): 192.168.1.121
-DeployServer Private NIC (eth1): 172.30.1.1
+- Public IP Network : 192.168.11.0/24
+- Private IP Network : 172.30.0.0/16
+- Domain Name : ace.local
+- DeployServer Host Name: center
+- DeployServer Public NIC (eth0): 192.168.1.121
+- DeployServer Private NIC (eth1): 172.30.1.1
 
 I prepared these files for Cent OS 7.
 
 - Files
 
--- dlfiles.sh
+# dlfiles.sh
 A download script for stable  coreos_production_pxe files and coreos_production_image files.
 You need to run it once.
 
@@ -29,32 +29,32 @@ coreos_production_image.bin.bz2 need be replaced to DocumentRoot/BuildNumber/ of
   
   ex. /var/www/html/1353.8.0/coreos_production_image.bin.bz2
 
--- ace.local.zone
+# ace.local.zone
 A zone file for ISC BIND server(named). 
    ex. /var/named/ace.local.zone
 
--- named.conf
+# named.conf
 A named server config
 
   ex. /etc/named.conf
 
--- default
+# default
 
 You will/would make DIRectory "pxelinux.cfg" in TFTP root.
 copy "default" into the directory.
 
   ex. /var/lib/tftpboot/pxelinux.cfg/default
   
--- dhcpd.conf        
+# dhcpd.conf        
   
   ex. /etc/dhcp/dhcpd.conf
   
--- inst.sh
+# inst.sh
 
 a file to kick coreos-install with options
   ex. /var/www/html/inst.sh
 
--- pxe.ign
+# pxe.ign
 
   Ignition config file for starting up after PXE boot.
   (ssh-key is what of my id_rsa.pub)
@@ -75,4 +75,5 @@ IMPORTANT: read comments in /etc/sysconfig/dhcpd
 5. Machine boots with NIC (If you use Hyper-V VM, Legacy NIC is required.)
 
 6. get inst.sh
+
 localhost: core $ wget http://center/inst.sh
