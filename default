@@ -1,0 +1,17 @@
+default menu.c32
+prompt 0
+timeout 300
+ontimeout local
+
+label coreos-inst
+	menu default
+	kernel coreos_production_pxe.vmlinuz
+	initrd coreos_production_pxe_image.cpio.gz
+	append coreos.first_boot=1 console=tty0 console=ttyS0 coreos.autologin=tty1 coreos.autologin=ttyS0 coreos.config.url=http://center.ace.local/pxe.ign
+label noignition
+        kernel coreos_production_pxe.vmlinuz
+        initrd coreos_production_pxe_image.cpio.gz
+        append coreos.first_boot=1 console=tty0 console=ttyS0 coreos.autologin=tty1 coreos.autologin=ttyS0 
+label local
+	menu label ^Local drive
+	localboot 0xffff
