@@ -60,7 +60,7 @@ I prepared these files for Cent OS 7.
 -  pxe.ign
 
   Ignition config file for starting up after PXE boot.
-  (ssh-key is what of my id_rsa.pub)
+  (ssh-rsa key is what of my id_rsa.pub)
 
 # Usage
 
