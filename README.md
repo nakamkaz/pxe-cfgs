@@ -64,23 +64,26 @@ I prepared these files for Cent OS 7.
 
 # Usage
 
-1. install dhcpd, tftpd, httpd (+ named) on DeployServer(center).
+1. Install dhcpd, tftpd, httpd (+ named) on DeployServer(center).
 
-2. setup dhcpd, tftpd, httpd (+ named) on DeployServer(center).
+2. Setup dhcpd, tftpd, httpd (+ named) on DeployServer(center).
 
  __IMPORTANT__: read comments in /etc/sysconfig/dhcpd
 
-
 3. Run dlfiles.sh and move files into tftpboot/ and /var/www/html/buildnumber/
 
-4. move inst.sh/pxe.ign into /var/www/html
+4. Move inst.sh/pxe.ign into /var/www/html
 
 5. Machine boots with NIC (If you use Hyper-V VM, Legacy NIC is required.)
-
+ 
+ Choose coreos-inst or noignition
  Container Linux boots up as live mode.
 
-6. get inst.sh and kick it on the VM.
+6. Get inst.sh to install CoreOS to Local Disk and kick it on the VM.
 
- localhost: core $ wget http://center/inst.sh
- localhost: core $ ./inst.sh
+ core@localhost: ~ $ wget http://center/inst.sh
+
+ core@localhost: ~ $ chmod +x inst.sh
+
+ core@localhost: ~ $ ./inst.sh
 
