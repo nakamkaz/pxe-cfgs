@@ -6,7 +6,7 @@ ontimeout local
 
 label local
         menu label ^Local Drive
-        localhost 0xffff
+        localboot 0xffff
 
 label coreos-inst
         menu default
