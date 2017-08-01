@@ -8,6 +8,7 @@ $ wget -O https://github.com/nakamkaz/pxe-cfgs/blob/master/genobsd61.sh
 $ sh genobsd61.sh > getfiles.sh
 $ sh getfiles.sh
 ```
+```
 SHA256
 SHA256.sig
 base61.tgz
@@ -23,14 +24,15 @@ xbase61.tgz
 xfont61.tgz
 xserv61.tgz
 xshare61.tgz
-
+```
 **COPY** _bsd.rd_ to $TFTP_ROOT. 
-**COPY** _pxeboot_ to $TFTP_ROOT.
-move other files to your web server directory.  
 
-/var/www/html/pub/OpenBSD/6.1/amd64/
-http://172.30.1.1/pub/OpenBSD/6.1/amd64/
-(or any path)
+**COPY** _pxeboot_ to $TFTP_ROOT.
+
+move other files to your web server directory.  
+ /var/www/html/pub/OpenBSD/6.1/amd64/
+ http://172.30.1.1/pub/OpenBSD/6.1/amd64/
+ ("pub/OpenBSD/RELEASE/ARCH/" is default path or you can specify any path)
 
 - $TFTP_ROOT/pxelinux.cfg/default 
 ```
@@ -45,14 +47,17 @@ append ::pxeboot
 boot tftp:bsd.rd
 ```
 
-- $TFTP_ROOT/bsd.rd
+- $TFTP_ROOT/bsd.rd, $TFTP_ROOT/pxeboot
 
 ls -l /var/lib/tftpboot/bsd.rd
+
+ls -l /var/lib/tftpboot/pxeboot
 
 
 ## Auto installation (unattended installation)
 
 https://ftp.openbsd.org/pub/OpenBSD/snapshots/amd64/INSTALL.amd64
+
 https://man.openbsd.org/autoinstall
 
 ``` Example install.conf, YO:UR:MA:CA:DR:ES-install.conf
