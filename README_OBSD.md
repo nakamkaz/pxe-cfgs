@@ -30,9 +30,12 @@ xshare61.tgz
 **COPY** _pxeboot_ to $TFTP_ROOT.
 
 move other files to your web server directory.  
- /var/www/html/pub/OpenBSD/6.1/amd64/
- http://172.30.1.1/pub/OpenBSD/6.1/amd64/
- ("pub/OpenBSD/RELEASE/ARCH/" is default path or you can specify any path)
+
+/var/www/html/pub/OpenBSD/6.1/amd64/
+ 
+http://172.30.1.1/pub/OpenBSD/6.1/amd64/
+
+("/pub/OpenBSD/RELEASE/ARCH/" is default path or you can specify any path)
 
 - $TFTP_ROOT/pxelinux.cfg/default 
 ```
